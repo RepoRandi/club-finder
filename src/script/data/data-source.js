@@ -3,10 +3,12 @@ function DataSource(onSuccess, onFailed) {
     this.onFailed = onFailed;
 }
 
+
 DataSource.prototype.searchClub = function (keyword) {
-    var filteredClubs = clubs.filter(function (club) {
+    const filteredClubs = clubs.filter(function (club) {
         return club.name.toUpperCase().includes(keyword.toUpperCase());
     });
+
 
     if (filteredClubs.length) {
         this.onSuccess(filteredClubs);
