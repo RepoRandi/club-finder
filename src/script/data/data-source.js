@@ -5,9 +5,7 @@ function DataSource(onSuccess, onFailed) {
 
 
 DataSource.prototype.searchClub = function (keyword) {
-    const filteredClubs = clubs.filter(function (club) {
-        return club.name.toUpperCase().includes(keyword.toUpperCase());
-    });
+    const filteredClubs = clubs.filter(club => club.name.toUpperCase().includes(keyword.toUpperCase()));
 
 
     if (filteredClubs.length) {
