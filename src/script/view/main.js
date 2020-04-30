@@ -4,8 +4,9 @@ const main = () => {
     const clubListElement = document.querySelector("#clubList");
 
     const onButtonSearchClicked = () => {
-        const dataSource = new DataSource(renderResult, fallbackResult);
-        dataSource.searchClub(searchElement.value);
+        DataSource.searchClub(searchElement.value)
+            .then(renderResult)
+            .catch(fallbackResult)
     };
 
     const renderResult = results => {
